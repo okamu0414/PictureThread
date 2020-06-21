@@ -1,0 +1,16 @@
+<div class="main">
+    <div class="container">
+        <div class="thread-header">
+            画像を変更する!
+        </div>
+        <div class="form">
+            <div class="thread-body">
+                <%= form_tag("/thread/#{@thread.id}/image_changed", multipart: true)do %>
+                    画像を選択してください
+                    <input type="file" name="image">
+                    <input type="submit">
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

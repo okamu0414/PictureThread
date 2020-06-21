@@ -1,0 +1,433 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* post/create ====================================== */
+
+.posts-create{
+    display: inline-block;
+    min-width: 600px;
+    min-height: 600px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+/* post/show ======================================== */
+
+.post-show-header{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 150;
+}
+.post-show-header-left{
+    display: inline-block;
+    width: 20%;
+}
+
+.post-show-header-right{
+    margin-left: 20px;
+    position: absolute;
+    display: inline-block;
+    width: 60%;
+    font-size: 36px;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.post-show-header-left img{
+    display: block;
+    width: 125px;
+    height: 125px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+}
+
+.post-show-body{
+    display: inline-block;
+    min-height: 300px;
+    min-width: 600px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+.post-destroy{
+    display: inline-block;
+    width: 20%;
+    height: auto;
+    backgroud-color: red;
+}
+
+.post-destroy input{
+}
+
+.post-show-body img{
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    object-fit: cover;
+}
+
+.like-btn-like{
+    color: #8899a6;
+}
+
+.like-btn-unlike{
+    color: #ff2581;
+}
+
+.post-show-like p{
+    display: inline-block;
+    font-size: 30px;   
+}
+
+.back-buttons{
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+
+.back-arrow{
+    position: absolute;
+    display: inline;
+    color: black;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.back-buttons p{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%)
+}
+
+@media all and (min-width: 769px){
+  // 769px 以上の画面用の CSS
+  /* post/create ====================================== */
+
+.posts-create{
+    display: inline-block;
+    min-width: 600px;
+    min-height: 600px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+/* post/show ======================================== */
+
+.post-show-header{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 150;
+}
+.post-show-header-left{
+    display: inline-block;
+    width: 20%;
+}
+
+.post-show-header-right{
+    margin-left: 20px;
+    position: absolute;
+    display: inline-block;
+    width: 60%;
+    font-size: 36px;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.post-show-header-left img{
+    display: block;
+    width: 125px;
+    height: 125px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+}
+
+.post-show-body{
+    display: inline-block;
+    min-height: 300px;
+    min-width: 600px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+.post-destroy{
+    display: inline-block;
+    width: 20%;
+    height: auto;
+    backgroud-color: red;
+}
+
+.post-destroy input{
+}
+
+.post-show-body img{
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    object-fit: cover;
+}
+
+.like-btn-like{
+    color: #8899a6;
+}
+
+.like-btn-unlike{
+    color: #ff2581;
+}
+
+.post-show-like p{
+    display: inline-block;
+    font-size: 30px;   
+}
+
+.back-buttons{
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+
+.back-arrow{
+    position: absolute;
+    display: inline;
+    color: black;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.back-buttons p{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%)
+}
+}
+@media all and (max-width: 768px){
+  // 768px 以下の画面用の CSS
+  /* post/create ====================================== */
+
+.posts-create{
+    display: inline-block;
+    min-width: 600px;
+    min-height: 600px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+/* post/show ======================================== */
+
+.post-show-header{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 150;
+}
+.post-show-header-left{
+    display: inline-block;
+    width: 20%;
+}
+
+.post-show-header-right{
+    margin-left: 20px;
+    position: absolute;
+    display: inline-block;
+    width: 60%;
+    font-size: 36px;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.post-show-header-left img{
+    display: block;
+    width: 125px;
+    height: 125px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+}
+
+.post-show-body{
+    display: inline-block;
+    min-height: 300px;
+    min-width: 600px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+.post-destroy{
+    display: inline-block;
+    width: 20%;
+    height: auto;
+    backgroud-color: red;
+}
+
+.post-destroy input{
+}
+
+.post-show-body img{
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    object-fit: cover;
+}
+
+.like-btn-like{
+    color: #8899a6;
+}
+
+.like-btn-unlike{
+    color: #ff2581;
+}
+
+.post-show-like p{
+    display: inline-block;
+    font-size: 30px;   
+}
+
+.back-buttons{
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+
+.back-arrow{
+    position: absolute;
+    display: inline;
+    color: black;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.back-buttons p{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%)
+}
+}
+@media all and (max-width: 640px){
+  // 640px 以下の画面用の CSS
+  /* post/create ====================================== */
+
+.posts-create{
+    display: inline-block;
+    min-width: 600px;
+    min-height: 600px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+/* post/show ======================================== */
+
+.post-show-header{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 150;
+}
+.post-show-header-left{
+    display: inline-block;
+    width: 20%;
+}
+
+.post-show-header-right{
+    margin-left: 60px;
+    position: absolute;
+    display: inline-block;
+    width: 60%;
+    font-size: 36px;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.post-show-header-left img{
+    display: block;
+    width: 125px;
+    height: 125px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+}
+
+.post-show-body{
+    display: inline-block;
+    min-height: 300px;
+    width: 100%;
+    min-width: auto;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+.post-destroy{
+    display: inline-block;
+    width: 200px;
+    height: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.post-destroy input{
+    
+}
+
+.post-show-body img{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+.like-btn-like{
+    color: #8899a6;
+}
+
+.like-btn-unlike{
+    color: #ff2581;
+}
+
+.post-show-like p{
+    display: inline-block;
+    font-size: 30px;   
+}
+
+.back-buttons{
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+
+.back-arrow{
+    position: absolute;
+    display: inline;
+    color: black;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.back-buttons p{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%)
+}
+}

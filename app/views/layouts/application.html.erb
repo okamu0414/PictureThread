@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sgo2App</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <%= favicon_link_tag('favicon.ico') %>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon180.png">
+    <meta name="viewport" content="width=device-width">
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes"></head>
+  <body>
+    
+    <!-- ヘッダー部分 -->
+    <header>
+      
+      <!-- ヘッダー左の方に表示 -->
+      <div class="header-logo">
+        <%= link_to("PictureThread","/") %>
+      </div>
+      
+      <!-- ヘッダー右の方に表示するメニューリスト -->
+      <ul class="header-menus">
+        <% if @current_user %>
+          <li>
+            <%= link_to("#{@current_user.name}","/users/#{@current_user.id}") %>
+          </li>
+          <li>
+            <!-- ログインページへ -->
+            <%= link_to("Logout","/logout", {method: :post}) %>
+          </li>
+          <li>
+            <%= link_to("AllThread","/thread/index") %>
+          </li>          
+          
+        <% else %>
+          <li>
+            <!-- ログインページへ -->
+            <%= link_to("Login","/login") %>
+          </li>
+          <li>
+            <%= link_to("SignUp","/signup") %>
+          </li>
+        <% end %>
+      </ul>
+
+    </header>
+    
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    
+    <%= yield %>
+  </body>
+</html>

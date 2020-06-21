@@ -1,0 +1,48 @@
+<!-- ユーザの個人ページのview -->
+
+<div class="main user-show">
+    <div class="container">
+        <div class="user-show-body">
+            
+            <!-- アイコン画像の表示 -->
+            <div class="user-icon">
+                <img src="<%= "/user_images/#{@user.image_name}" %>">
+            </div>
+            
+            <!-- ユーザの名前を表示 -->
+            <div class="user-name">
+                <h2><%= @user.name %></h2>
+            </div>
+            <!-- ユーザのメアドを表示 -->
+            <div class="user-email">
+                <p><%= @user.email %></p>
+            </div>
+            
+            <!-- ユーザ情報の編集ページへのリンク -->
+            <div class="user-show-button">
+                <%= link_to("/users/#{@user.id}/edit") do %>
+                    <input type="submit" value="編集">
+                <% end %>
+            </div>
+            
+            <ul class="user-tabs">
+                <li class="active">
+                    <%= link_to("投稿", "/users/#{@user.id}") %>
+                </li>
+                <li>
+                    <%= link_to("いいね!", "/users/#{@user.id}/likes") %>
+                </li>
+            </ul>
+            
+            <!-- 💩 -->
+            <!-- ユーザの投稿を表示 -->
+            <div class="user-posts">
+                <% @user.posts.each do |post| %>
+                    <%= link_to("/posts/#{post.id}") do %>
+                        <img src="<%="/thread_images/main_images/#{post.image_name}"%>">
+                    <% end %>
+                <% end %>
+            </div>    
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="main thread-show">
+    <div class="container">
+        <div class="back-buttons">
+            <%= link_to("/thread/index")do %>
+            <i class="fas fa-angle-left back-arrow fa-2x"></i>
+            <p>戻る</p>
+            <% end %>
+        </div>
+        <div class="thread-header">
+            
+            <h3><%= "スレッド作成者：#{@thread.user_name}" %></h3>
+            <%= @thread.thread_name %>
+        </div>
+        
+        <ul class="thread-show-buttons">
+            <li>
+                <%= link_to("/posts/#{@thread.id}/create")do %>
+                    <input type="submit" value="このスレッドで投稿">
+                <% end %>
+            </li>
+            <li>
+                <% if @thread.user_name != "HOST" %>
+                    <% if @current_user.id == @thread.user.id%>
+                        <%= link_to("/thread/#{@thread.id}/image_edit")do %>
+                            <input class="thread-image-edit-button" type="submit" value="スレッド画像を編集できます">
+                        <% end %>
+                    <% end %>
+                <% end %>
+            </li>
+        </ul>
+        
+        <!-- 並び替え　結局新しいviewとpostsテーブルにlike_countカラム追加しちゃいました -->
+        <!-- マイページから引っ張ってきたままだからcssはまだいじってません。ごめんなさい🙇 -->
+        <!-- like_sort.html.erbで画像のうえにでてるいいねの数は邪魔だったら消してください↓ -->
+        <ul class="thread-tabs">
+            <li>
+                <%= link_to("新着順", "/thread/#{@thread.id}") %>
+            </li>
+            <li class="active">
+                <%= link_to("いいね順", "/thread/#{@thread.id}/like_sort") %>
+            </li>
+        </ul>
+        
+        <div class="thread-post-body">
+            
+            <!-- @postsの内容をpostに入れてすべて表示する -->
+            <% @posts.each do |post|%> 
+            
+            <%#
+            <p><%= Like.where(post_id: post.id).count </p>　<!-- いいねの数を表示してるのはこの行です -->
+            %>
+                <%= link_to("/posts/#{post.id}")do %>
+                    <div class="thread-post">
+                        <img src=" <%= "/thread_images/main_images/#{post.image_name}" %> "></img>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>

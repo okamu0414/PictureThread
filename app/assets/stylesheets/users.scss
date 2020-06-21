@@ -1,0 +1,393 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* users/show ===================== */
+.user-show{
+  text-align: center;
+}
+
+.user-icon img { /* ユーザのアイコン */
+  width: 200px;
+  height: 200px;
+  border-radius: 30%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+}
+
+.user-posts{ /* ユーザの投稿画像の表示の仕方 */
+  display: inline-block;
+  min-width: 600px;
+  min-height: 600px;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  padding: 10px 10px;
+}
+
+.user-name h2{
+  font-size: 35px;
+}
+
+.user-email p{
+  display: inline-block;
+  background-color: white;
+  font-size: 25px;
+  width: auto;
+  border: groove;
+  border-radius: 100px;
+  padding: 0px 20px;
+}
+
+.user-posts img{ /* ユーザの投稿画像の大きさとか */
+  display: inline-block;
+  float:left;
+  width: 33%;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px #c1ced7;
+  padding: 7px 7px;
+  cursor: pointer;
+}
+
+.user-posts img:hover{
+  box-shadow: 0 2px 6px #565c60;
+}
+
+.user-show-button input[type="submit"]{ /* 編集画面へのぼたん */
+    display: block;
+    background-color: #4682b4; //#3ecdc6;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    padding: 5px 30px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.user-tabs { // いいねか投稿したやつかわけるやつ
+  min-width: 600px;
+  margin-top: 25px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-tabs li {
+  float: left;
+}
+
+.user-tabs li.active {
+  border-bottom: 2px solid #4682b4; //#3ecdc6;
+}
+
+.user-tabs li.active a {
+  color: #57575f;
+}
+
+.user-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}
+
+/* users/login ===================== */
+
+
+/* users/edit ====================== */
+
+@media all and (min-width: 769px){
+  // 769px 以上の画面用の CSS
+  /* users/show ===================== */
+.user-show{
+  text-align: center;
+}
+
+.user-icon img { /* ユーザのアイコン */
+  width: 200px;
+  height: 200px;
+  border-radius: 30%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+}
+
+.user-posts{ /* ユーザの投稿画像の表示の仕方 */
+  display: inline-block;
+  min-width: 600px;
+  min-height: 600px;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-name h2{
+  font-size: 35px;
+}
+
+.user-email p{
+  display: inline-block;
+  background-color: white;
+  font-size: 25px;
+  width: auto;
+  border: groove;
+  border-radius: 100px;
+  padding: 0px 20px;
+}
+
+.user-posts img{ /* ユーザの投稿画像の大きさとか */
+  display: inline-block;
+  float:left;
+  width: 33%;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px #c1ced7;
+  padding: 7px 7px;
+  cursor: pointer;
+}
+
+.user-posts img:hover{
+  box-shadow: 0 2px 6px #565c60;
+}
+
+.user-show-button input[type="submit"]{ /* 編集画面へのぼたん */
+    display: block;
+    background-color: #4682b4; //#3ecdc6;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    padding: 5px 30px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.user-tabs { // いいねか投稿したやつかわけるやつ
+  min-width: 600px;
+  margin-top: 25px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-tabs li {
+  float: left;
+}
+
+.user-tabs li.active {
+  border-bottom: 2px solid #4682b4; //#3ecdc6;
+}
+
+.user-tabs li.active a {
+  color: #57575f;
+}
+
+.user-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}
+}
+@media all and (max-width: 768px){
+  // 768px 以下の画面用の CSS
+  /* users/show ===================== */
+.user-show{
+  text-align: center;
+}
+
+.user-icon img { /* ユーザのアイコン */
+  width: 200px;
+  height: 200px;
+  border-radius: 30%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+}
+
+.user-posts{ /* ユーザの投稿画像の表示の仕方 */
+  display: inline-block;
+  min-width: 600px;
+  min-height: 600px;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-name h2{
+  font-size: 35px;
+}
+
+.user-email p{
+  display: inline-block;
+  background-color: white;
+  font-size: 25px;
+  width: auto;
+  border: groove;
+  border-radius: 100px;
+  padding: 0px 20px;
+}
+
+.user-posts img{ /* ユーザの投稿画像の大きさとか */
+  display: inline-block;
+  float:left;
+  width: 33%;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px #c1ced7;
+  padding: 7px 7px;
+  cursor: pointer;
+}
+
+.user-posts img:hover{
+  box-shadow: 0 2px 6px #565c60;
+}
+
+.user-show-button input[type="submit"]{ /* 編集画面へのぼたん */
+    display: block;
+    background-color: #4682b4; //#3ecdc6;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    padding: 5px 30px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.user-tabs { // いいねか投稿したやつかわけるやつ
+  min-width: 600px;
+  margin-top: 25px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-tabs li {
+  float: left;
+}
+
+.user-tabs li.active {
+  border-bottom: 2px solid #4682b4; //#3ecdc6;
+}
+
+.user-tabs li.active a {
+  color: #57575f;
+}
+
+.user-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}
+}
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 640px){
+  // 640px 以下の画面用の CSS
+  /* users/show ===================== */
+.user-show{
+  text-align: center;
+}
+
+.user-icon img { /* ユーザのアイコン */
+  width: 100px;
+  height: 100px;
+  border-radius: 30%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 0px 0 0px;
+  object-fit: cover;
+}
+
+.user-posts{ /* ユーザの投稿画像の表示の仕方 */
+  display: inline-block;
+  min-width: auto;
+  min-height: 600px;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-name h2{
+  font-size: 35px;
+}
+
+.user-email p{
+  display: inline-block;
+  background-color: white;
+  font-size: 20px;
+  width: auto;
+  border: groove;
+  border-radius: 100px;
+  padding: 0px 20px;
+}
+
+.user-posts img{ /* ユーザの投稿画像の大きさとか */
+  display: inline-block;
+  float:left;
+  width: 33%;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px #c1ced7;
+  padding: 7px 7px;
+  cursor: pointer;
+}
+
+.user-posts img:hover{
+  box-shadow: 0 2px 6px #565c60;
+}
+
+.user-show-button input[type="submit"]{ /* 編集画面へのぼたん */
+    display: block;
+    background-color: #4682b4; //#3ecdc6;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    padding: 5px 30px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.user-tabs { // いいねか投稿したやつかわけるやつ
+  min-width: auto;
+  margin-top: 25px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-tabs li {
+  float: left;
+}
+
+.user-tabs li.active {
+  border-bottom: 2px solid #4682b4; //#3ecdc6;
+}
+
+.user-tabs li.active a {
+  color: #57575f;
+}
+
+.user-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}
+}

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  thread_name: MyString
+  user_name: MyString
+  limit_time: 2020-02-27 07:19:02
+
+two:
+  thread_name: MyString
+  user_name: MyString
+  limit_time: 2020-02-27 07:19:02

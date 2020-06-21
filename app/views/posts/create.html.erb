@@ -1,0 +1,24 @@
+<div class="main">
+    <div class="container">
+        <div class="form-heading">
+            <p><%= "#{@thread.thread_name}に投稿"%></p>
+        </div>
+        <div class="form">
+        <div class="form-body">
+            <% @post.errors.full_messages.each do |message| %>
+              <div class="form-error">
+                <%= message %>
+              </div>
+            <% end %>
+            
+            <%= form_tag("/posts/#{@thread.id}/new", multipart: true)do %>
+                <div>
+                    <p>画像</p>
+                    <input name="image" type="file">
+                    <input type="submit" value="送信">
+                </div>
+            <% end %>
+        </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="main">
+    <div class="thread-container">
+        <div class="thread-header">
+            
+           スレッド一覧 
+           <%= link_to("/thread/create")do %>
+               <input type="submit" value="スレッドを作成">
+           <% end %>
+        </div>
+        <div class="thread-body"> 
+        
+        <!-- @threadsの中身をすべてループ -->
+        <% @threads.each do |thread| %> 
+            <%= link_to("/thread/#{thread.id}")do %>
+                <div class="thread">
+                    <div class="thread-image">
+                        <h3><%= thread.thread_name %></h3>  
+                        <img src=" <%= "/thread_images/test_images/#{thread.thread_image_name}" %>" ></img>  
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+        </div>
+    </div>
+</div>

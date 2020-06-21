@@ -1,0 +1,26 @@
+<div class="main">
+    <div class="container">
+        <div class="thread-header">
+            新しいスレッドを作成
+        </div>
+        <div class="thread-body">
+            <% @newthread.errors.full_messages.each do |message| %>
+                  <div class="form-error">
+                    <%= message %>
+                  </div>
+                <% end %>
+            <div class="form">
+                <div class="thread-create-form">
+                    <%= form_tag("/thread/new", multipart: true)do%>
+                        <p class="min-font">スレッド画像を設定できます</p>
+                        <input type="file" name="image">
+                        <p class="min-font">※後から設定・変更が可能です。</p>
+                        <input type="text" name="thread_name" value="<%= @newthread.thread_name %>" placeholder="スレッド名を入力して下さい">
+                        <p class="min-font">※後から変更できません</p>
+                        <input type="submit" value="作成">
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

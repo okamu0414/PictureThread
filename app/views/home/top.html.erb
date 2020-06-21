@@ -1,0 +1,19 @@
+<!-- トップページ -->
+<div class="top-test">
+    <div class="top-wrapper">
+        <h1>Picture Thread</h1>
+        <p>-さあ、写真を好きに投稿しよう-</p>
+             
+        <% if !@current_user  %>
+            <%= link_to("/login") do %>
+                <div class="top-login">
+                    ログイン 
+                </div>
+            <% end %> 
+        <% end %>
+        
+    </div>
+    <div class="top-footer">
+        <p>フリー素材ぱくたそ（www.pakutaso.com）</p>
+    </div>
+</div>

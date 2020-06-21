@@ -1,0 +1,678 @@
+// Place all the styles related to the thread controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* thread/index =============================*/
+.thread-container{
+    max-width: 800px;
+    margin: 60px auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    clear: both;
+}
+
+.thread-header{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 48px;
+    color: #bcc8d4;
+}
+
+.thread-header h3{
+    color: black;
+    font-size: 16px;
+}
+
+.thread-header input[type="submit"]{
+    display: block;
+    background-color: #4682b4; //#3ecdc6;色どっちがいいか？
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: 150px;
+    border-radius: 2px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 5px 10px 5px;
+}
+
+.thread-body{
+    display: inline-block;
+    min-width:  800px;
+    min-height: 600px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 30px 30px;
+}
+
+.thread{
+    padding-bottom: 5px;
+}
+
+.thread-image{
+    display:block;
+    z-index:1;
+    position:relative;
+    padding: 8px 8px 0px 8px;
+}
+
+.thread-image img{
+    width: 100%;
+    object-fit: cover;
+    height:200px;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-image h3{
+    position:absolute;
+    font-weight:bold;
+    color:#ffffff;
+    top:40%;
+    z-index:2;
+    margin-left:70px;
+    font-size:50px;
+    text-shadow:1px 1px 0 #4682b4,-1px 1px 0 #4682b4,1px -1px 0 #4682b4,-1px -1px 0 #4682b4;
+    //↑影を用いて枠を表示してます
+}
+.thread-image:hover{
+    //opacity: 0.5;
+    box-shadow: 0 2px 5px #565c60;
+    transform: scale(1.05);
+    transition-duration: 1s;
+    z-index: 2;
+    //background-color: rgba(a9,a9,a9,0.7);
+}
+// エラー出てる
+
+/* thread/show========================== */
+.thread-show-buttons{
+    width: auto;
+}
+
+.thread-show-buttons input[type="submit"]{
+    display: block;
+    background-color: #4682b4; //#3ecdc6;色どっちがいいか？
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: auto;
+    border-radius: 5px;
+    padding: 10px 20px 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.thread-post-body{
+    display: inline-block;
+    min-width: 600px;
+    min-height: 600px;
+    height: auto;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+.thread-post img{
+    display: inline-block;
+    float:left;
+    width: 33%;
+    height: 150px;
+    object-fit: cover;
+    padding: 7px 7px;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-post img:hover{
+    //opacity: 0.5;
+    box-shadow: 0 2px 6px #565c60;
+}
+
+/* thread/show & thread/like_sort ================ */
+// いいねか投稿したやつかわけるやつ
+.thread-tabs {
+    min-width: 600px;
+    margin-top: 20px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-tabs li {
+  float: left;
+}
+
+.thread-tabs li.active {
+  border-bottom: 2px solid #4682b4; //#3ecdc6;
+}
+
+.thread-tabs li.active a {
+  color: #57575f;
+}
+
+.thread-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}
+
+/* thread/create ========================= */
+
+.thread-create-form p{
+    font-size: 28px;
+}
+
+.thread-create-form .min-font{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+@media all and (min-width: 769px){
+  // 769px 以上の画面用の CSS
+  /* thread/index =============================*/
+.thread-container{
+    max-width: 800px;
+    margin: 60px auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    clear: both;
+}
+
+.thread-header{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 48px;
+    color: #bcc8d4;
+}
+
+.thread-header h3{
+    color: black;
+    font-size: 16px;
+}
+
+.thread-header input[type="submit"]{
+    display: block;
+    background-color: #4682b4; //#3ecdc6;色どっちがいいか？
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: 150px;
+    border-radius: 2px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 5px 10px 5px;
+}
+
+.thread-body{
+    display: inline-block;
+    min-width:  auto;
+    min-height: 600px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 30px 30px;
+}
+
+.thread{
+    padding-bottom: 5px;
+}
+
+.thread-image{
+    display:block;
+    z-index:1;
+    position:relative;
+    padding: 8px 8px 0px 8px;
+}
+
+.thread-image img{
+    width: 100%;
+    object-fit: cover;
+    height:200px;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-image h3{
+    position:absolute;
+    font-weight:bold;
+    color:#ffffff;
+    top:40%;
+    z-index:2;
+    margin-left:70px;
+    font-size:50px;
+    text-shadow:1px 1px 0 #4682b4,-1px 1px 0 #4682b4,1px -1px 0 #4682b4,-1px -1px 0 #4682b4;
+    //↑影を用いて枠を表示してます
+}
+.thread-image:hover{
+    //opacity: 0.5;
+    box-shadow: 0 2px 5px #565c60;
+    transform: scale(1.05);
+    transition-duration: 1s;
+    z-index: 2;
+    //background-color: rgba(a9,a9,a9,0.7);
+}
+// エラー出てる
+
+/* thread/show========================== */
+.thread-show-buttons{
+    width: auto;
+}
+
+.thread-show-buttons input[type="submit"]{
+    display: block;
+    background-color: #4682b4; //#3ecdc6;色どっちがいいか？
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: auto;
+    border-radius: 5px;
+    padding: 10px 20px 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.thread-post-body{
+    display: inline-block;
+    min-width: 600px;
+    min-height: 600px;
+    height: auto;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+.thread-post img{
+    display: inline-block;
+    float:left;
+    width: 33%;
+    height: 150px;
+    object-fit: cover;
+    padding: 7px 7px;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-post img:hover{
+    //opacity: 0.5;
+    box-shadow: 0 2px 6px #565c60;
+}
+
+/* thread/show & thread/like_sort ================ */
+// いいねか投稿したやつかわけるやつ
+.thread-tabs {
+    min-width: 600px;
+    margin-top: 20px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-tabs li {
+  float: left;
+}
+
+.thread-tabs li.active {
+  border-bottom: 2px solid #4682b4; //#3ecdc6;
+}
+
+.thread-tabs li.active a {
+  color: #57575f;
+}
+
+.thread-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}
+
+/* thread/create ========================= */
+
+.thread-create-form p{
+    font-size: 28px;
+}
+
+.thread-create-form .min-font{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+}
+@media all and (max-width: 768px){
+  // 768px 以下の画面用の CSS
+  /* thread/index =============================*/
+.thread-container{
+    max-width: 800px;
+    margin: 60px auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    clear: both;
+}
+
+.thread-header{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 48px;
+    color: #bcc8d4;
+}
+
+.thread-header h3{
+    color: black;
+    font-size: 16px;
+}
+
+.thread-header input[type="submit"]{
+    display: block;
+    background-color: #4682b4; //#3ecdc6;色どっちがいいか？
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: 150px;
+    border-radius: 2px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 5px 10px 5px;
+}
+
+.thread-body{
+    display: inline-block;
+    min-width:  auto;
+    min-height: 600px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 30px 30px;
+}
+
+.thread{
+    padding-bottom: 5px;
+}
+
+.thread-image{
+    display:block;
+    z-index:1;
+    position:relative;
+    padding: 8px 8px 0px 8px;
+}
+
+.thread-image img{
+    width: 100%;
+    object-fit: cover;
+    height:200px;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-image h3{
+    position:absolute;
+    font-weight:bold;
+    color:#ffffff;
+    top:40%;
+    z-index:2;
+    margin-left:70px;
+    font-size:50px;
+    text-shadow:1px 1px 0 #4682b4,-1px 1px 0 #4682b4,1px -1px 0 #4682b4,-1px -1px 0 #4682b4;
+    //↑影を用いて枠を表示してます
+}
+.thread-image:hover{
+    //opacity: 0.5;
+    box-shadow: 0 2px 5px #565c60;
+    transform: scale(1.05);
+    transition-duration: 1s;
+    z-index: 2;
+    //background-color: rgba(a9,a9,a9,0.7);
+}
+// エラー出てる
+
+/* thread/show========================== */
+.thread-show-buttons{
+    width: auto;
+}
+
+.thread-show-buttons input[type="submit"]{
+    display: block;
+    background-color: #4682b4; //#3ecdc6;色どっちがいいか？
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: auto;
+    border-radius: 5px;
+    padding: 10px 20px 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.thread-post-body{
+    display: inline-block;
+    min-width: 600px;
+    min-height: 600px;
+    height: auto;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+.thread-post img{
+    display: inline-block;
+    float:left;
+    width: 33%;
+    height: 150px;
+    object-fit: cover;
+    padding: 7px 7px;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-post img:hover{
+    //opacity: 0.5;
+    box-shadow: 0 2px 6px #565c60;
+}
+
+/* thread/show & thread/like_sort ================ */
+// いいねか投稿したやつかわけるやつ
+.thread-tabs {
+    min-width: 600px;
+    margin-top: 20px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-tabs li {
+  float: left;
+}
+
+.thread-tabs li.active {
+  border-bottom: 2px solid #4682b4; //#3ecdc6;
+}
+
+.thread-tabs li.active a {
+  color: #57575f;
+}
+
+.thread-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}
+
+/* thread/create ========================= */
+
+.thread-create-form p{
+    font-size: 28px;
+}
+
+.thread-create-form .min-font{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+}
+@media all and (max-width: 640px){
+  // 640px 以下の画面用の CSS
+  /* thread/index =============================*/
+.thread-container{
+    max-width: 800px;
+    margin: 60px auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    clear: both;
+}
+
+.thread-header{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 48px;
+    color: #bcc8d4;
+}
+
+.thread-header h3{
+    color: black;
+    font-size: 16px;
+}
+
+.thread-header input[type="submit"]{
+    display: block;
+    background-color: #4682b4; //#3ecdc6;色どっちがいいか？
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: 150px;
+    border-radius: 2px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 5px 10px 5px;
+}
+
+.thread-body{
+    display: inline-block;
+    min-width:  auto;
+    min-height: 600px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 30px 30px;
+}
+
+.thread{
+    padding-bottom: 5px;
+}
+
+.thread-image{
+    display:block;
+    z-index:1;
+    position:relative;
+    padding: 8px 8px 0px 8px;
+}
+
+.thread-image img{
+    width: 100%;
+    object-fit: cover;
+    height:100px;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-image h3{
+    position:absolute;
+    font-weight:bold;
+    color:#ffffff;
+    top:40%;
+    z-index:2;
+    margin-left:40px;
+    font-size:30px;
+    text-shadow:1px 1px 0 #4682b4,-1px 1px 0 #4682b4,1px -1px 0 #4682b4,-1px -1px 0 #4682b4;
+    //↑影を用いて枠を表示してます
+}
+.thread-image:hover{
+    //opacity: 0.5;
+    box-shadow: 0 2px 5px #565c60;
+    transform: scale(1.05);
+    transition-duration: 1s;
+    z-index: 2;
+    //background-color: rgba(a9,a9,a9,0.7);
+}
+// エラー出てる
+
+/* thread/show========================== */
+.thread-show-buttons{
+    width: auto;
+}
+
+.thread-show-buttons input[type="submit"]{
+    display: block;
+    background-color: #4682b4; //#3ecdc6;色どっちがいいか？
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: auto;
+    border-radius: 5px;
+    padding: 10px 20px 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.thread-post-body{
+    display: inline-block;
+    min-width: auto;
+    min-height: 600px;
+    height: auto;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+}
+
+.thread-post img{
+    display: inline-block;
+    float:left;
+    width: 33%;
+    height: 150px;
+    object-fit: cover;
+    padding: 7px 7px;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-post img:hover{
+    //opacity: 0.5;
+    box-shadow: 0 2px 6px #565c60;
+}
+
+/* thread/show & thread/like_sort ================ */
+// いいねか投稿したやつかわけるやつ
+.thread-tabs {
+    min-width: auto;
+    margin-top: 20px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.thread-tabs li {
+  float: left;
+}
+
+.thread-tabs li.active {
+  border-bottom: 2px solid #4682b4; //#3ecdc6;
+}
+
+.thread-tabs li.active a {
+  color: #57575f;
+}
+
+.thread-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}
+
+/* thread/create ========================= */
+
+.thread-create-form p{
+    font-size: 28px;
+}
+
+.thread-create-form .min-font{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+}

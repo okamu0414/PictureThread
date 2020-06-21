@@ -1,0 +1,42 @@
+<div class="main post-show">
+    <div class="container">
+        
+        <div class="post-show-header">
+            <div class="back-buttons">
+                <%= link_to("/thread/#{@post.post_thread_name.id}")do %>
+                <i class="fas fa-angle-left back-arrow fa-2x"></i>
+                <p>戻る</p>
+                <% end %>
+            </div>
+            <div class="post-show-header-left">
+                <img src ="<%= "/user_images/#{@user.image_name}" %>">
+            </div>
+            <div class="post-show-header-right">
+                <%= @user.name %>
+            </div>
+            <div class="post-destroy">
+                <% if @current_user.id == @user.id %>
+                    <%= link_to("/posts/#{@post.id}/destroy",{method: "post"})do %>
+                        <input type="submit" value="削除">
+                    <% end %>
+                <% end %>
+            </div>
+            
+        </div>
+        <div class="post-show-body">
+            <div class="post-show-like">
+                <% if @like %>
+                    <%= link_to("/likes/#{@post.id}/destroy",{method: "post"})do %>
+                        <i class="fas fa-heart like-btn-unlike fa-2x"></i>
+                    <% end %>
+                <% else %>
+                    <%= link_to("/likes/#{@post.id}/create", {method: "post"})do %>
+                        <i class="fas fa-heart like-btn-like fa-2x"></i>
+                    <% end %>
+                <% end %>
+                <p><%= Like.where(post_id: @post.id).count %></p>
+            </div>
+            <img src=" <%= "/thread_images/main_images/#{@post.image_name}" %> "></img>
+        </div>
+    </div>
+</div>
