@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20200228180614) do
 
-  create_table "add_threads", force: :cascade do |t|
+  create_table "add_threads", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "thread_name"
     t.string   "user_name"
     t.datetime "limit_time"
@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 20200228180614) do
     t.integer  "create_user_id"
   end
 
-  create_table "likes", force: :cascade do |t|
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image_name"
     t.string   "user_id"
     t.string   "thread_name"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20200228180614) do
     t.integer  "like_count"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password"
