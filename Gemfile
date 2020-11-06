@@ -16,8 +16,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
-  #gem 'sqlite3', '~> 1.3.6'
-  gem 'mysql2', '~> 0.4.4'
+  gem 'sqlite3', '~> 1.3.6'
+  #gem 'mysql2', '~> 0.4.4'
   gem 'byebug', platform: :mri
 end
 
@@ -29,8 +29,8 @@ group :development do
 end
 
 group :production do
-  gem 'mysql2', '~> 0.4.4'
-  #gem 'pg', '1.1.4'
+  #gem 'mysql2', '~> 0.4.4'
+  gem 'pg', '1.1.4'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
