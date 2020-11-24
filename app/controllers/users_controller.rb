@@ -37,15 +37,20 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = User.find_by(id: params[:id])
-    @user.name = params[:name]
-    @user.email = params[:email]
+    @user = User.find(params[:id])
+    # @user.name = params[:name]
+    # @user.email = params[:email]
+    #patch処理にしたり、railsのアップデートで置き換えた
+    @user.update(user_params)
+    # @user.image.attach(params[:name])
+    # @user.image.attach(params[:email])
+    # @user.image.attach(params[:image])
     
-    if params[:image]
-      @user.image_name = "#{@user.id}.png"
-      image = params[:image]
-      File.binwrite("public/user_images/#{@user.image_name}", image.read)
-    end
+    # if params[:image]
+    #   @user.image_name = "#{@user.id}.png"
+    #   image = params[:image]
+    #   File.binwrite("public/user_images/#{@user.image_name}", image.read)
+    # end
       
     if @user.save
       flash[:notice] = "ユーザ情報を編集しました"
@@ -60,7 +65,7 @@ class UsersController < ApplicationController
       name: params[:name],
       email: params[:email],
       password: params[:password],
-      image_name: "default_user.png"
+      image: nil
     )    #新しいインスタンスを作成
     if @user.save    #それをデータベースに保存
       session[:user_id] = @user.id
@@ -81,4 +86,11 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id).order(id: "DESC") #降順=新着順
   end
+  
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :image)
+    end
+
 end

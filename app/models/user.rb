@@ -3,6 +3,7 @@ class User < ApplicationRecord
     validates :email, {uniqueness: true, presence: true}
     validates :name, {presence: true}       #ユーザの情報に名前の値は必ず存在するべき
     validates :password, {presence: true}       #ユーザの情報にパスワードも必ず存在するべき
+    has_one_attached :image  #activestorageのためのやつ
     
     #ユーザに紐づいた投稿を取得するためにPostインスタンスを戻り値にする
     def posts

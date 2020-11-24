@@ -6,7 +6,13 @@
             
             <!-- アイコン画像の表示 -->
             <div class="user-icon">
-                <img src="<%= "/user_images/#{@user.image_name}" %>">
+                <!-- <%= image_tag @user.image if @user.image.attached? %> -->
+
+                <% if @user.image.attached? %>
+                    <%= image_tag(rails_blob_path(@user.image)) %>
+                <% end %>              
+
+                <!-- <img src="<%= "/user_images/#{@user.image_name}" %>"> -->
             </div>
             
             <!-- ユーザの名前を表示 -->

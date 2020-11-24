@@ -22,7 +22,12 @@
                 <% if @thread.user_name != "HOST" %>
                     <% if @current_user.id == @thread.user.id%>
                         <%= link_to("/thread/#{@thread.id}/image_edit")do %>
-                            <input class="thread-image-edit-button" type="submit" value="スレッド画像を編集できます">
+                            <input class="thread-image-edit-button" type="submit" value="スレッド画像を編集">
+                        <% end %>
+                    <% end %>
+                    <% if @current_user.id == @thread.create_user_id%>
+                        <%= link_to("/thread/#{@thread.id}/destroy", {method: "post"})do %>
+                            <input class="thread-image-edit-button" type="submit" value="スレッドを削除">
                         <% end %>
                     <% end %>
                 <% end %>
