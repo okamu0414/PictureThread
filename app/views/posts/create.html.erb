@@ -11,13 +11,24 @@
               </div>
             <% end %>
             
-            <%= form_tag("/posts/#{@thread.id}/new", multipart: true)do %>
+            <!-- activestorageを使うために置き換えた
+                <%= form_tag("/posts/#{@thread.id}/new", multipart: true)do %>
+                    <div>
+                        <p>画像</p>
+                        <input name="image" type="file">
+                        <input type="submit" value="送信">
+                    </div>
+                <% end %>
+            -->
+
+            <%= form_with(model: @post, url: "/posts/#{@thread.id}/new", local: true, multipart: true) do |form| %>
                 <div>
                     <p>画像</p>
-                    <input name="image" type="file">
-                    <input type="submit" value="送信">
+                    <%= form.file_field :image %>
+                    <%= form.submit value: "送信" %>
                 </div>
             <% end %>
+
         </div>
         </div>
     </div>

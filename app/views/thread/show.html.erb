@@ -52,7 +52,12 @@
             <% @posts.each do |post|%> 
                 <%= link_to("/posts/#{post.id}")do %>
                     <div class="thread-post">
-                        <img src=" <%= "/thread_images/main_images/#{post.image_name}" %> "></img>
+
+                        <% if post.image.attached? %>
+                            <%= image_tag(rails_blob_path(post.image)) %>
+                        <% end %>  
+
+                        <!-- <img src=" <%= "/thread_images/main_images/#{post.image_name}" %> "></img> -->
                     </div>
                 <% end %>
             <% end %>
