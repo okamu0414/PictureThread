@@ -1,8 +1,9 @@
 class Post < ApplicationRecord
-    validates :image_name, {presence: true}  #からの投稿を防ぐ
+    validates :image, {presence: true}  #からの投稿を防ぐ
     validates :user_id, {presence: true}  #だれが投稿したかの情報は必ず必要
     #validates :thread_name, {presence: true}     #必ずどこかのスレッドには属している必要がある
     #↑一旦解決策見つかるまでコメントアウトします
+    has_one_attached :image  #activestorageのためのやつ
     
     #投稿に紐づいたuserインスタンスを返すメソッド
     def user

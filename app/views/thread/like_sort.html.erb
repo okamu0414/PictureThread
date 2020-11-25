@@ -20,7 +20,7 @@
             </li>
             <li>
                 <% if @thread.user_name != "HOST" %>
-                    <% if @current_user.id == @thread.user.id%>
+                    <% if @current_user.id == @thread.create_user_id%>
                         <%= link_to("/thread/#{@thread.id}/image_edit")do %>
                             <input class="thread-image-edit-button" type="submit" value="スレッド画像を編集">
                         <% end %>
@@ -56,7 +56,12 @@
             %>
                 <%= link_to("/posts/#{post.id}")do %>
                     <div class="thread-post">
-                        <img src=" <%= "/thread_images/main_images/#{post.image_name}" %> "></img>
+
+                        <% if post.image.attached? %>
+                            <%= image_tag(rails_blob_path(post.image)) %>
+                        <% end %>  
+
+                        <!-- <img src=" <%= "/thread_images/main_images/#{post.image_name}" %> "></img> -->
                     </div>
                 <% end %>
             <% end %>
