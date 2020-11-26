@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get "login" => "users#login_form"            #ログインページ
   post "login" => "users#login"                 #ログインの機能
   
-  post "users/:id/update" => "users#update"    #編集機能
+  #post "users/:id/update" => "users#update"    #編集機能
+  # postからpatchに置き換えた
+  patch "users/:id/update" => "users#update" 
   get "users/:id/edit" => "users#edit"        #編集ページ
   get "signup" => "users#new"           #新規登録ページ
   post "users/create" => "users#create"    #新規登録ページから受け取ったデータを保存する

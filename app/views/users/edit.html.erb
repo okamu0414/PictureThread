@@ -13,14 +13,26 @@
                 </div>
                 <% end %>
                 
-                <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
-                  <p>ユーザー名</p>
-                  <input name="name" value="<%= @user.name %>">
-                  <p>画像</p>
-                  <input name="image" type="file">
-                  <p>メールアドレス</p>
-                  <input name="email" value="<%= @user.email %>">
-                  <input type="submit" value="保存">
+                <!-- activestorageを使うために置き換えた
+                    <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+                    <p>ユーザー名</p>
+                    <input name="name" value="<%= @user.name %>">
+                    <p>画像</p>
+                    <input name="image" type="file">
+                    <p>メールアドレス</p>
+                    <input name="email" value="<%= @user.email %>">
+                    <input type="submit" value="保存">
+                    <% end %>
+                -->
+
+                <%= form_with(model: @user, url: "/users/#{@user.id}/update", local: true, multipart: true) do |form| %>
+                    <p>ユーザー名</p>
+                    <%= form.text_field :name, value: @user.name %>
+                    <p>メールアドレス</p>
+                    <%= form.email_field :email, value: @user.email %>
+                    <p>画像</p>
+                    <%= form.file_field :image %>
+                    <%= form.submit value: "送信" %>
                 <% end %>
             </div>
         </div>

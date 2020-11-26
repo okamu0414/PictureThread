@@ -6,7 +6,13 @@
             
             <!-- アイコン画像の表示 -->
             <div class="user-icon">
-                <img src="<%= "/user_images/#{@user.image_name}" %>">
+                <!-- <%= image_tag @user.image if @user.image.attached? %> -->
+
+                <% if @user.image.attached? %>
+                    <%= image_tag(rails_blob_path(@user.image)) %>
+                <% end %>              
+
+                <!-- <img src="<%= "/user_images/#{@user.image_name}" %>"> -->
             </div>
             
             <!-- ユーザの名前を表示 -->
@@ -39,7 +45,12 @@
             <div class="user-posts">
                 <% @user.posts.each do |post| %>
                     <%= link_to("/posts/#{post.id}") do %>
-                        <img src="<%="/thread_images/main_images/#{post.image_name}"%>">
+
+                    <% if post.image.attached? %>
+                        <%= image_tag(rails_blob_path(post.image)) %>
+                    <% end %> 
+
+                        <!-- <img src="<%="/thread_images/main_images/#{post.image_name}"%>"> -->
                     <% end %>
                 <% end %>
             </div>    

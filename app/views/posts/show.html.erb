@@ -9,7 +9,12 @@
                 <% end %>
             </div>
             <div class="post-show-header-left">
-                <img src ="<%= "/user_images/#{@user.image_name}" %>">
+
+                <% if @user.image.attached? %>
+                    <%= image_tag(rails_blob_path(@user.image)) %>
+                <% end %>  
+
+                <!-- <img src ="<%= "/user_images/#{@user.image_name}" %>"> -->
             </div>
             <div class="post-show-header-right">
                 <%= @user.name %>
@@ -36,7 +41,12 @@
                 <% end %>
                 <p><%= Like.where(post_id: @post.id).count %></p>
             </div>
-            <img src=" <%= "/thread_images/main_images/#{@post.image_name}" %> "></img>
+
+            <% if @post.image.attached? %>
+                <%= image_tag(rails_blob_path(@post.image)) %>
+            <% end %>  
+
+            <!-- <img src=" <%= "/thread_images/main_images/#{@post.image_name}" %> "></img> -->
         </div>
     </div>
 </div>
