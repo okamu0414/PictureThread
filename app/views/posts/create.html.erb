@@ -24,10 +24,19 @@
             <%= form_with(model: @post, url: "/posts/#{@thread.id}/new", local: true, multipart: true) do |form| %>
                 <div>
                     <p>画像</p>
-                    <%= form.file_field :image %>
-                    <%= form.submit value: "送信" %>
+                    <%= form.file_field :image, onchange: "Btnfunction()" %>
+                    <%= form.submit value: "送信", id: "post_submit", disabled: true %>
                 </div>
             <% end %>
+
+            <!-- 送信ボタンのjavascript -->
+            <script type="text/javascript">
+                function Btnfunction(){
+                    const btn = document.getElementById("post_submit");
+                    btn.disabled = false;
+                }
+                
+            </script>
 
         </div>
         </div>

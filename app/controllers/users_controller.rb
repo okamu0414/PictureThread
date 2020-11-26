@@ -85,6 +85,11 @@ class UsersController < ApplicationController
   def likes
     @user = User.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id).order(id: "DESC") #降順=新着順
+
+    #いいねした投稿を@postsにまとめている
+    @likes.each do |like|
+      @posts = Post.where(id: like.post_id)
+    end
   end
   
   private

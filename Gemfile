@@ -14,6 +14,7 @@ gem "serviceworker-rails"
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'aws-sdk-s3', require: false
 
 group :development, :test do
   gem 'sqlite3', '~> 1.3.6'
