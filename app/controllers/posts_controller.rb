@@ -15,27 +15,27 @@ class PostsController < ApplicationController
   
   def new
     @thread = AddThread.find_by(id: params[:thread_id])
-    image = params[:image]
 
     # @post = Post.create params.require(:post).permit(user_id: @current_user.id, thread_name: @thread.thread_name, :image)
 
-    # ActiveStorageのために削除した
+  # if params[:image].nil?
+  #   render("posts/create")
+  # else
     @post = Post.new(
       user_id: @current_user.id,
-      thread_name: @thread.thread_name,
-      image: nil
+      thread_name: @thread.thread_name
     )
+    @post.image.attach(params[:post][:image])
 
     if @post.save
-      @post.image.attach(params[:post][:image])
-      if @post.save
-        redirect_to("/thread/#{@thread.id}")
-      else
-        render("posts/create")
-      end
+      # @post.create(post_params)
+      # @post.image.attach(params[:post][:image])
+      redirect_to("/thread/#{@thread.id}")
     else
       render("posts/create")
     end
+
+  # end
 
   end
   
@@ -55,7 +55,8 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:image)
+      params.require(:post).permit(:user_id, :thread_name, :image)
     end
+
 
 end

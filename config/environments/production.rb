@@ -86,5 +86,5 @@ Rails.application.configure do
 
   # Use activestorage
   # Store files locally.
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 end
