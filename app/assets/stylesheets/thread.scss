@@ -39,7 +39,7 @@
 
 .thread-body{
     display: inline-block;
-    min-width:  800px;
+    width:  100%;
     min-height: 600px;
     height: auto;
     background-color: white;
@@ -159,6 +159,9 @@
 }
 
 /* thread/create ========================= */
+// .thread-create-form {
+//     margin-left: 200px;
+// }
 
 .thread-create-form p{
     font-size: 28px;
